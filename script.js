@@ -670,31 +670,5 @@ calcHydrant
 
 });
 
-/* リセット */
-
-document.getElementById("resetBtn")
-.addEventListener(
-"click",
-()=>{
-
-localStorage.clear();
-
-location.reload();
-
-}
-);
-
-if("serviceWorker" in navigator){
-
-window.addEventListener(
-"load",
-()=>{
-
-navigator.serviceWorker.register(
-"./service-worker.js"
-);
-
-}
-);
 
 }
