@@ -723,6 +723,14 @@ new Sortable(menu,{
 
 animation:150,
 
+delay:200,
+
+delayOnTouchOnly:true,
+
+touchStartThreshold:5
+
+});
+
 onEnd:()=>{
 
 const order = [];
