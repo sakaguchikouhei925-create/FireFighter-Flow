@@ -615,6 +615,7 @@ calcHydrant
 
 });
 
+/*
 if("serviceWorker" in navigator){
 
 window.addEventListener(
@@ -629,3 +630,4 @@ navigator.serviceWorker.register(
 );
 
 }
+*/
