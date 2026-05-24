@@ -670,6 +670,20 @@ calcHydrant
 
 });
 
+/* リセット */
+
+document.getElementById("resetBtn")
+.addEventListener(
+"click",
+()=>{
+
+localStorage.clear();
+
+location.reload();
+
+}
+);
+
 if("serviceWorker" in navigator){
 
 window.addEventListener(
@@ -684,94 +698,3 @@ navigator.serviceWorker.register(
 );
 
 }
-
-/* 並び保存 */
-
-const menu =
-document.getElementById("menuCards");
-
-/* 保存済み並び取得 */
-
-const savedOrder =
-localStorage.getItem("menuOrder");
-
-if(savedOrder){
-
-const order =
-JSON.parse(savedOrder);
-
-order.forEach(id=>{
-
-const el =
-document.querySelector(
-`[data-order="${id}"]`
-);
-
-if(el){
-
-menu.appendChild(el);
-
-}
-
-});
-
-}
-
-/* Sortable */
-
-new Sortable(menu,{
-
-animation:150,
-
-delay:200,
-
-delayOnTouchOnly:true,
-
-touchStartThreshold:5
-
-});
-
-delay:200,
-
-delayOnTouchOnly:true,
-
-touchStartThreshold:5
-
-});
-
-onEnd:()=>{
-
-const order = [];
-
-document
-.querySelectorAll(".menuCard")
-.forEach(card=>{
-
-order.push(
-card.dataset.order
-);
-
-});
-
-localStorage.setItem(
-"menuOrder",
-JSON.stringify(order)
-);
-
-}
-
-});
-
-/* リセット */
-
-document.getElementById("resetBtn")
-.addEventListener(
-"click",
-()=>{
-
-localStorage.clear();
-
-location.reload();
-
-}
-);
