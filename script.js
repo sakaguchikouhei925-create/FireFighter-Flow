@@ -688,7 +688,7 @@ navigator.serviceWorker.register(
 /* 並び保存 */
 
 const menu =
-document.getElementById("menuPage");
+document.getElementById("menuCards");
 
 /* 保存済み並び取得 */
 
@@ -722,6 +722,14 @@ menu.appendChild(el);
 new Sortable(menu,{
 
 animation:150,
+
+delay:200,
+
+delayOnTouchOnly:true,
+
+touchStartThreshold:5
+
+});
 
 delay:200,
 
